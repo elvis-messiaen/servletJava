@@ -44,7 +44,7 @@ public class article extends HttpServlet {
 		out.println("<html>");
 		out.println("<body>");
 		out.println("<p> articles :" + value + "</p>");
-		out.println("<a href= '/detail'>detail</a>");
+		out.println("<a href= 'detail'>detail</a>");
 		out.println("</body>");
 		out.println("</html>");
 	}

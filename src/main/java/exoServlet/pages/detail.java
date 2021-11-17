@@ -38,12 +38,12 @@ public class detail extends HttpServlet {
 		
 		String titre = null;
 		String contenu = null;
-		
+		String author = null;
 		
 		for (int i = 0; i < user.getArticles().size(); i++) {
 			titre = user.getArticles().get(i).getTitre().toString();
 			contenu = user.getArticles().get(i).getContenu().toString();
-			
+			author = user.getUsername().toString();
 		
 		
 		
@@ -51,7 +51,8 @@ public class detail extends HttpServlet {
 		out.println("<body>");
 		out.println("<p> titre article :" + titre + "</p>");
 		out.println("<p> contenu articles :" + contenu + "</p>");
-		out.println("<a href= '/detail'>detail</a>");
+		out.println("<p> contenu articles :" + author + "</p>");
+		out.println("<p>-------------------------------------<p>");
 		out.println("</body>");
 		out.println("</html>");
 	}
