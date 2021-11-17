@@ -1,7 +1,6 @@
 package exoServlet.pages;
 
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.List;
 
 import exoServlet.Articles;
@@ -15,13 +14,14 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class article
+ * Servlet implementation class detail
  */
-@WebServlet("/article")
-public class article extends HttpServlet {
-
-
-    public article() {
+@WebServlet("/detail")
+public class detail extends HttpServlet {
+    /**
+     * Default constructor. 
+     */
+    public detail() {
     }
 
 	/**
@@ -32,18 +32,25 @@ public class article extends HttpServlet {
 		User user = (User)session.getAttribute("USER");
 		List<Articles> article = (List<Articles>) session.getAttribute("ART");
 		
+		
 		ServletOutputStream out = resp.getOutputStream();
 		session.setAttribute("ART", article);
 		
-		String value = null;
+		String titre = null;
+		String contenu = null;
+		
+		
 		for (int i = 0; i < user.getArticles().size(); i++) {
-			   value = user.getArticles().get(i).getTitre().toString();
-			   System.out.println(value);
+			titre = user.getArticles().get(i).getTitre().toString();
+			contenu = user.getArticles().get(i).getContenu().toString();
+			
+		
 		
 		
 		out.println("<html>");
 		out.println("<body>");
-		out.println("<p> articles :" + value + "</p>");
+		out.println("<p> titre article :" + titre + "</p>");
+		out.println("<p> contenu articles :" + contenu + "</p>");
 		out.println("<a href= '/detail'>detail</a>");
 		out.println("</body>");
 		out.println("</html>");

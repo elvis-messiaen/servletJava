@@ -30,7 +30,6 @@ public class Home extends HttpServlet {
 		out.println("<body>");
 		out.println("<h1> page accueil<h1>");
 		out.println("<a href= 'utilisateur'>utilisateur</a>");
-		//"<a href= 'user-info'> Voir mes infos utilisateur </a>"
 		out.println("<a href= '/article'>article</a>");
 		out.println("</body>");
 		out.println("</html>");
