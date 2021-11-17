@@ -9,6 +9,11 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
+ <!--   
+  <filter-mapping>
+  <filter-name>f1</filter-name>
+  <url-pattern>/utilisateur</url-pattern>
+  </filter-mapping>
+  -->
   
 </web-app>
